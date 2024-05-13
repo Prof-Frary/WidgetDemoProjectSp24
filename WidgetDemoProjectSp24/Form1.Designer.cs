@@ -39,6 +39,8 @@
             label5 = new Label();
             btnCreate = new Button();
             btnQuit = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            lstOut = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -118,7 +120,7 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(29, 321);
+            btnCreate.Location = new Point(30, 330);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(75, 23);
             btnCreate.TabIndex = 9;
@@ -128,7 +130,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(175, 321);
+            btnQuit.Location = new Point(175, 330);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 23);
             btnQuit.TabIndex = 10;
@@ -136,11 +138,26 @@
             btnQuit.UseVisualStyleBackColor = true;
             btnQuit.Click += btnQuit_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // lstOut
+            // 
+            lstOut.FormattingEnabled = true;
+            lstOut.HorizontalScrollbar = true;
+            lstOut.ItemHeight = 15;
+            lstOut.Location = new Point(18, 256);
+            lstOut.Name = "lstOut";
+            lstOut.Size = new Size(257, 64);
+            lstOut.TabIndex = 11;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(302, 365);
+            Controls.Add(lstOut);
             Controls.Add(btnQuit);
             Controls.Add(btnCreate);
             Controls.Add(txtPrice);
@@ -172,5 +189,7 @@
         private Label label5;
         private Button btnCreate;
         private Button btnQuit;
+        private OpenFileDialog openFileDialog1;
+        private ListBox lstOut;
     }
 }

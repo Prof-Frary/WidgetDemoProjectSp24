@@ -13,23 +13,23 @@ namespace WidgetDemoProjectSp24
         // usage - keep a count of how many object of this type are created
         // consts that will will be the same for all instances
 
-        // overloading
-        // overriding
-        // sub class
+        // overloading done with the constructors
+        // overriding 
+        // sub class - all classes are a sub class of the class Object, so it inherits certain this like ToString
         // property - read only
-        // backing variable
-        // auto-properties
-        // add description property
-        // add more constructors
-        // add const colors
-        // add ToString
-        // add ability to sort
+        // backing variable - a local variable that gets set by the property
+        // auto-properties - a property without a specified backing variable
+        // add description property to Widget
+        // add more constructors (part of overloading)
+        // add const colors - to show static 
+        // add ToString - will show override
+        // add ability to sort - sorting  is done on an array.  The class only has to define how to compare classes
 
         //backing  variable for description property
         private string desc;
-        public static string BLUE = "blue";
-        public static string YELLOW = "yellow";
-        public static string RED = "red";
+        public static readonly string BLUE = "blue";
+        public static readonly string YELLOW = "yellow";
+        public static readonly string RED = "red";
 
         // constructor - must be public and no return type
         public Widget(string name, string color, string d) {
@@ -67,7 +67,10 @@ namespace WidgetDemoProjectSp24
         }
 
         //uses auto- properties
+
+        // Here the WidgetName property cannot be set except inside this class- this makes it readonly outside the class
         public string WidgetName { get; private set; }
+       
         public string Color { get; set; }
         public double Price { get; set; }
         
@@ -82,9 +85,18 @@ namespace WidgetDemoProjectSp24
             private  set {          
                 desc = value;     
             }
-         }   
+         }
+
+        public override string ToString()
+        {
+            return ("Widget Name is  " + WidgetName + 
+                " Widget Description is " + Description +
+                " Widget Color is " + Color +
+                " Widget Price is " + Price.ToString("C")
+                
+                ) ;
+        }
 
     }
-
-   
+      
 }
